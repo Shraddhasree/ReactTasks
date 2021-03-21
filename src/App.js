@@ -5,12 +5,26 @@ import Header from "./Components/Header";
 import AllCustomers from "./Components/AllCustomers";
 import AddCustomer from "./Components/AddCustomer";
 
-
 function App() {
   const [customers, setCustomers] = useState([
-    { id: "1", name: "Shruthi", location: "Australia" },
-    { id: "2", name: "Shraddha", location: "India" },
-    { id: "3", name: "Medha", location: "United States" },
+    {
+      id: "1",
+      name: "Aditya",
+      location: "Australia",
+      email: "aditya@react.com",
+    },
+    {
+      id: "2",
+      name: "Shraddha",
+      location: "India",
+      email: "shraddha@react.com",
+    },
+    {
+      id: "3",
+      name: "Medha",
+      location: "United States",
+      email: "medha@react.com",
+    },
   ]);
 
   const [count, setCount] = useState(3);
@@ -24,23 +38,20 @@ function App() {
   };
 
   const onDelete = (id) => {
-    setCustomers(customers.filter((customer) => customer.id != id));
+    setCustomers(customers.filter((customer) => customer.id !== id));
   };
 
-  const [custName,setCustName] =useState("default");
-  const [custLocation,setCustLocation] =useState("default");
   const [showEdit, setShowEdit] = useState(false);
 
   const onEdit = (id) => {
     setShowEdit(!showEdit);
-    const row=customers.filter((customer) => customer.id === id);
-    console.log("you are editing", row)
-};
+    const row = customers.filter((customer) => customer.id === id);
+    console.log("you are editing", row);
+  };
 
   return (
     <div className="container">
       <Header title="Customer Information" />
-      
 
       {customers.length > 0 ? (
         <AllCustomers
@@ -51,11 +62,10 @@ function App() {
           onAdd={() => setShowAdd(!showAdd)}
           showAdd={showAdd}
         />
-        
       ) : (
         "No records to delete. Please add the Customers"
       )}
-      
+
       {showAdd && <AddCustomer onAdd={onAdd} />}
     </div>
   );

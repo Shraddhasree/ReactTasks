@@ -5,15 +5,9 @@ import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import IconButton from "@material-ui/core/IconButton";
-import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
-import EditIcon from "@material-ui/icons/Edit";
-import TextField from "@material-ui/core/TextField";
-import { useState } from "react";
 import Paper from "@material-ui/core/Paper";
-import AddCustomer from "./AddCustomer";
-
+import EachCustomer from "./EachCustomer";
 
 const AllCustomers = ({
   customers,
@@ -41,7 +35,6 @@ const AllCustomers = ({
     <>
       <TableContainer align="left" component={Paper}>
         <Table
-          stickyheader
           size="small"
           className={classes.tableHead}
           aria-label="a dense table"
@@ -57,6 +50,12 @@ const AllCustomers = ({
               <TableCell align="left">
                 <b>CustomerLocation</b>
               </TableCell>
+              <TableCell align="left">
+                <b>emailAddress</b>
+              </TableCell>
+              {/* <TableCell align="left">
+                <b>Gender</b>
+              </TableCell> */}
               <TableCell>
                 <Button
                   variant="contained"
@@ -76,31 +75,13 @@ const AllCustomers = ({
           </TableHead>
           <TableBody>
             {customers.map((customer) => (
-              <TableRow key={customer.id}>
-                <TableCell component="th" scope="row" align="left">
-                  {customer.id}
-                </TableCell>
-                <TableCell align="left">{customer.name}</TableCell>
-                <TableCell align="left">{customer.location}</TableCell>
-                <TableCell>
-                  <Button
-                    color="default"
-                    text="Edit"
-                    size="small"
-                    onClick={() => onEdit(customer.id)}
-                  >
-                    <EditIcon />
-                  </Button>
-                  <IconButton
-                    aria-label="delete"
-                    className={classes.margin}
-                    size="small"
-                    onClick={() => onDelete(customer.id)}
-                  >
-                    <DeleteIcon fontSize="inherit" />
-                  </IconButton>
-                </TableCell>
-              </TableRow>
+              <EachCustomer
+                key={customer.id}
+                customer={customer}
+                showEdit={showEdit}
+                onEdit={onEdit}
+                onDelete={onDelete}
+              />
             ))}
           </TableBody>
         </Table>

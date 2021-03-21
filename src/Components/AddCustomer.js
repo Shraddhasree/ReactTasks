@@ -1,8 +1,10 @@
 import { useState } from "react";
 
-const AddCustomer = ({ onAdd}) => {
+const AddCustomer = ({ onAdd }) => {
   const [name, setName] = useState();
   const [location, setLocation] = useState();
+  const [email, setEmail] = useState();
+  //const [gender,setGender] = useState();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -10,9 +12,14 @@ const AddCustomer = ({ onAdd}) => {
       alert("Please add a name");
       return;
     }
-    onAdd({ name, location });
+    if (!email.match(/.+@.+/)) {
+      alert("Please add a valid email");
+      return;
+    }
+    onAdd({ name, location, email });
     setName("");
     setLocation("");
+    setEmail("");
   };
 
   return (
@@ -35,6 +42,23 @@ const AddCustomer = ({ onAdd}) => {
           onChange={(e) => setLocation(e.target.value)}
         />
       </div>
+      <div className="form-control">
+        <label>Email</label>
+        <input
+          type="text"
+          placeholder="Add Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+      {/* <div className="form-control">
+        <label>Gender</label>
+        <input
+          type="radiobutton"
+          value={gender}
+          onChange={(e) => setLocation(e.target.value)}
+        />
+      </div> */}
       <input type="submit" value="Save Details" className="btn btn-block" />
     </form>
   );

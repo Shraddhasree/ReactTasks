@@ -8,14 +8,18 @@ import TableRow from "@material-ui/core/TableRow";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import EachCustomer from "./EachCustomer";
+import { useState } from "react";
+import EditIcon from "@material-ui/icons/Edit";
+import CheckIcon from "@material-ui/icons/Check";
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 const AllCustomers = ({
   customers,
   onAdd,
   onDelete,
   showAdd,
-  onEdit,
-  showEdit,
+  //onEdit,
+  //showEdit,
 }) => {
   const useStyles = makeStyles((theme) => ({
     margin: {
@@ -30,6 +34,8 @@ const AllCustomers = ({
   }));
 
   const classes = useStyles();
+
+  const [showEdit, setShowEdit] = useState(false);
 
   return (
     <>
@@ -57,10 +63,11 @@ const AllCustomers = ({
                 <b>Gender</b>
               </TableCell> */}
               <TableCell>
+              <ButtonGroup variant="contained" aria-label="contained primary button group">
                 <Button
                   variant="contained"
                   color={showAdd ? "secondary" : "primary"}
-                  size="large"
+                  size="small"
                   title={
                     showAdd
                       ? "Click to close the form"
@@ -70,7 +77,19 @@ const AllCustomers = ({
                 >
                   {showAdd ? "Close" : "Add"}
                 </Button>
+                
+              <Button
+          color="primary"
+          variant="contained"
+          size="small"
+          onClick={() => setShowEdit(!showEdit)}
+          startIcon = {showEdit ? <CheckIcon /> : <EditIcon />}
+        >
+          {showEdit ? "Confirm" : "Edit"}
+        </Button>
+        </ButtonGroup>
               </TableCell>
+              
             </TableRow>
           </TableHead>
           <TableBody>
@@ -79,7 +98,7 @@ const AllCustomers = ({
                 key={customer.id}
                 customer={customer}
                 showEdit={showEdit}
-                onEdit={onEdit}
+                //onEdit={onEdit}
                 onDelete={onDelete}
               />
             ))}

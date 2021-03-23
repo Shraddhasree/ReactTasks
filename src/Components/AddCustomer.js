@@ -12,8 +12,8 @@ const AddCustomer = ({ onAdd }) => {
       alert("Please add a name");
       return;
     }
-    if (!email.match(/.+@.+/)) {
-      alert("Please add a valid email");
+    if (!email.match(/.+@.+.com/)) {
+      alert("Please add a valid email (Ex: abc@xyz.com )");
       return;
     }
     onAdd({ name, location, email });

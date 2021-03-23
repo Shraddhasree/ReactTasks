@@ -61,13 +61,13 @@ const EachCustomer = ({ customer, showEdit, onEdit, onDelete }) => {
       </TableCell>
       {/* <TableCell align="left">{showEdit ? <TextField type="text" value={custGender} onChange={(e)=>setCustGender(e.target.value)}/> : custGender}</TableCell> */}
       <TableCell>
-        <Button
+        {/* <Button
           color="default"
           size="small"
           onClick={() => onEdit(customer.id)}
         >
           {showEdit ? <CheckIcon /> : <EditIcon />}
-        </Button>
+        </Button> */}
         <IconButton
           aria-label="delete"
           //className={classes.margin}

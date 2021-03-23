@@ -43,11 +43,11 @@ function App() {
 
   const [showEdit, setShowEdit] = useState(false);
 
-  const onEdit = (id) => {
-    setShowEdit(!showEdit);
-    const row = customers.filter((customer) => customer.id === id);
-    console.log("you are editing", row);
-  };
+  // const onEdit = (id) => {
+  //   setShowEdit(!showEdit);
+  //   const row = customers.filter((customer) => customer.id === id);
+  //   console.log("you are editing", row);
+  // };
 
   return (
     <div className="container">
@@ -57,7 +57,7 @@ function App() {
         <AllCustomers
           customers={customers}
           onDelete={onDelete}
-          onEdit={onEdit}
+          //onEdit={onEdit}
           showEdit={showEdit}
           onAdd={() => setShowAdd(!showAdd)}
           showAdd={showAdd}

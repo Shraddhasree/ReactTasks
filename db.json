@@ -1,0 +1,28 @@
+{
+  "customers": [
+    {
+      "id": "1",
+      "name": "Aditya",
+      "location": "Australia",
+      "email": "aditya@react.com"
+    },
+    {
+      "id": "2",
+      "name": "Shraddha",
+      "location": "India",
+      "email": "shraddha@react.com"
+    },
+    {
+      "id": "3",
+      "name": "Medha",
+      "location": "Texas",
+      "email": "medha@react.com"
+    },
+    {
+      "id": "Pj0F3-t",
+      "name": "Murali",
+      "location": "Hyderabad",
+      "email": "murali@react.com"
+    }
+  ]
+}

@@ -5,6 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+[Code Output](https://github.com/Shraddhasree/ReactTasks/blob/CustInfo2-Edit%2CAPICalls/custInfo-assignment2.gif)
 
 ### `npm start`
 

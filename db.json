@@ -2,14 +2,14 @@
   "customers": [
     {
       "id": "1",
-      "name": "Aditya",
+      "name": "AdityaSharma",
       "location": "Australia",
-      "email": "aditya@react.com"
+      "email": "aditya@gmail.com"
     },
     {
       "id": "2",
-      "name": "Shraddha",
-      "location": "India",
+      "name": "Shraddhasree",
+      "location": "India, Hyderabad",
       "email": "shraddha@react.com"
     },
     {
@@ -17,12 +17,6 @@
       "name": "Medha",
       "location": "Texas",
       "email": "medha@react.com"
-    },
-    {
-      "id": "Pj0F3-t",
-      "name": "Murali",
-      "location": "Hyderabad",
-      "email": "murali@react.com"
     }
   ]
 }
